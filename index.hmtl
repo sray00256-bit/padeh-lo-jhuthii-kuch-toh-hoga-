@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Special message for Jhoothi ❤️</title>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      background: radial-gradient(circle at center, #ffd1dc 0%, #ff8fa3 100%);
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px;
+      overflow-x: hidden;
+    }
+
+    /* Floating background hearts */
+    .particle {
+      position: fixed;
+      pointer-events: none;
+      animation: floatUp linear infinite;
+      z-index: 1;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(105vh) scale(0.6); opacity: 0; }
+      20% { opacity: 0.8; }
+      80% { opacity: 0.8; }
+      100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+    }
+
+    /* Main Container Card */
+    .card {
+      position: relative;
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.96);
+      border-radius: 24px;
+      box-shadow: 0 15px 35px rgba(201, 24, 74, 0.25);
+      border: 3px solid #ffccd5;
+      width: 100%;
+      max-width: 440px;
+      padding: 2rem 1.6rem;
+      text-align: center;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #ff4d6d;
+      background: #ffe5ec;
+      padding: 4px 14px;
+      border-radius: 50px;
+      margin-bottom: 0.8rem;
+    }
+
+    h1 {
+      font-family: 'Caveat', cursive;
+      font-size: 2.5rem;
+      color: #c9184a;
+      line-height: 1.2;
+      margin-bottom: 0.6rem;
+    }
+
+    .subtitle {
+      color: #555;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin-bottom: 1.2rem;
+    }
+
+    /* Memory Cards */
+    .memories {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .memory-row {
+      background: #fff0f3;
+      border-left: 4px solid #ff4d6d;
+      border-radius: 12px;
+      padding: 0.7rem 0.9rem;
+      text-align: left;
+      font-size: 0.88rem;
+      color: #590d22;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    /* Beating Heart Icon */
+    .heart-icon {
+      font-size: 3.2rem;
+      display: inline-block;
+      margin-bottom: 0.5rem;
+      animation: heartbeat 1.2s infinite ease-in-out;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
+    /* Button Area */
+    .btn-area {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.2rem;
+      min-height: 60px;
+      position: relative;
+      margin-top: 1rem;
+    }
+
+    .btn {
+      padding: 0.8rem 2rem;
+      font-size: 1.05rem;
+      font-weight: 700;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    #yesBtn {
+      background: linear-gradient(135deg, #2b9348, #55a630);
+      color: white;
+      box-shadow: 0 8px 18px rgba(43, 147, 72, 0.35);
+    }
+
+    #yesBtn:hover {
+      transform: scale(1.08);
+    }
+
+    #noBtn {
+      background: #f1f3f5;
+      color: #495057;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      position: relative;
+      transition: top 0.15s ease, left 0.15s ease;
+    }
+
+    /* Success Screen */
+    .success-view {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card" id="proposalCard">
+    
+    <!-- Question View -->
+    <div id="mainView">
+      <div class="tag">From Devta Jii</div>
+      <h1>Suno Jhoothi... 💌</h1>
+      <p class="subtitle">A few universal truths about us:</p>
+
+      <div class="memories">
+        <div class="memory-row">📸 Me constantly annoying you for photos!</div>
+        <div class="memory-row">💬 Me replying to your long paragraphs with just <i>"hmm"</i>.</div>
+        <div class="memory-row">☀️ You demanding: <b>"Pehle Good Morning bolo!"</b></div>
+      </div>
+
+      <div class="heart-icon">💖</div>
+
+      <p style="font-weight: 700; color: #c9184a; font-size: 1.1rem; margin-bottom: 0.5rem;">
+        Will you be mine forever, Jhoothi?
+      </p>
+
+      <div class="btn-area" id="btnGroup">
+        <button id="yesBtn" class="btn">YES! ❤️</button>
+        <button id="noBtn" class="btn">No</button>
+      </div>
+    </div>
+
+    <!-- Success View -->
+    <div id="successView" class="success-view">
+      <div class="heart-icon">🥰</div>
+      <h1>Best Decision Ever! 🎉</h1>
+      <p class="subtitle" style="font-size: 1rem; color: #444; margin-top: 0.8rem;">
+        Your <b>Devta Jii</b> is officially the happiest person right now! ❤️
+      </p>
+      <p style="font-size: 0.85rem; color: #888; margin-top: 1.5rem;">
+        Opening WhatsApp to confirm with Devta Jii... 💬
+      </p>
+    </div>
+
+  </div>
+
+  <script>
+    // Floating background particles
+    function spawnParticles() {
+      const symbols = ['🌸', '💖', '✨', '💕', '🌹', '💌'];
+      for (let i = 0; i < 28; i++) {
+        const p = document.createElement('div');
+        p.className = 'particle';
+        p.innerText = symbols[Math.floor(Math.random() * symbols.length)];
+        p.style.left = Math.random() * 100 + 'vw';
+        p.style.fontSize = (Math.random() * 1.3 + 0.9) + 'rem';
+        p.style.animationDuration = (Math.random() * 4 + 4) + 's';
+        p.style.animationDelay = (Math.random() * 5) + 's';
+        document.body.appendChild(p);
+      }
+    }
+    spawnParticles();
+
+    // Runaway No Button
+    const noBtn = document.getElementById('noBtn');
+    const card = document.getElementById('proposalCard');
+
+    function dodge(e) {
+      if (e) e.preventDefault();
+      const cardRect = card.getBoundingClientRect();
+      const btnRect = noBtn.getBoundingClientRect();
+
+      const maxX = cardRect.width - btnRect.width - 30;
+      const maxY = 90;
+
+      const randomX = Math.floor(Math.random() * maxX) - (maxX / 2);
+      const randomY = Math.floor(Math.random() * maxY) - (maxY / 2);
+
+      noBtn.style.position = 'absolute';
+      noBtn.style.transform = `translate(${randomX}px, ${randomY}px)`;
+    }
+
+    noBtn.addEventListener('mouseenter', dodge);
+    noBtn.addEventListener('touchstart', dodge);
+
+    // YES Click Handler
+    const yesBtn = document.getElementById('yesBtn');
+    yesBtn.addEventListener('click', () => {
+      document.getElementById('mainView').style.display = 'none';
+      document.getElementById('successView').style.display = 'block';
+
+      setTimeout(() => {
+        const yourNumber = "919648466940";
+        const message = encodeURIComponent("YES Devta Jii! 🥰 Aapki Jhoothi ab se sirf aapki! ❤️ Good morning ab roz time pe bolna padega! 😉");
+        window.location.href = `https://wa.me/${yourNumber}?text=${message}`;
+      }, 2200);
+    });
+  </script>
+</body>
+</html>
